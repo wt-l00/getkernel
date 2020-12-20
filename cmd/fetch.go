@@ -27,6 +27,7 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+	"sync"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/spf13/cobra"
@@ -119,7 +120,8 @@ func makeURLs(version string) []string {
 	return uniqURLs
 }
 
-func download(url string) error {
+func download(url string, wg *sync.WaitGroup) error {
+	defer wg.Done()
 	res, err := http.Get(url)
 	if err != nil {
 		return err
@@ -141,10 +143,16 @@ func download(url string) error {
 
 func fetch(version string) {
 	urls := makeURLs(version)
+	var wg sync.WaitGroup
+
 	for _, url := range urls {
-		log.Println("Downloading: " + url)
-		download(url)
+		log.Println("downloading: " + url)
+		wg.Add(1)
+		go download(url, &wg)
 	}
+
+	log.Println("Wait for finishes to download")
+	wg.Wait()
 	log.Println("Finish!!")
 }
 
