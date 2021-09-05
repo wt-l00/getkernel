@@ -2,12 +2,13 @@
 
 ## what
 
-ubuntu用のカーネルのインストールの検索とダウンロードをするツール
+A tool to search and download kernels for ubuntu
+
 
 ## how to install
 
 ``` 
-go get github.com/wt-l00/getkernel
+go install github.com/wt-l00/getkernel@latest
 ```
 
 ## list
@@ -20,11 +21,6 @@ getkernel list
 
 ```
 getkernel fetch v5.8.7
-```
-
-インストールするよ〜
-```
-sudo dpkg -i *.deb
 ```
 
 ## example
