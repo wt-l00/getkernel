@@ -20,7 +20,7 @@ getkernel list
 ## fetch
 
 ```
-getkernel fetch v5.8.7
+getkernel fetch vx.x.x #e.g. v5.8.7
 ```
 
 ### example
