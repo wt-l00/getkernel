@@ -23,10 +23,10 @@ getkernel list
 getkernel fetch v5.8.7
 ```
 
-## example
+### example
 
 ```
-$ getkernel fetch 5.8.7
+$ getkernel fetch v5.8.7
 2020/12/20 11:39:22 downloading: https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.8.7/amd64/linux-headers-5.8.7-050807-generic_5.8.7-050807.202009051031_amd64.deb
 2020/12/20 11:39:22 downloading: https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.8.7/amd64/linux-headers-5.8.7-050807_5.8.7-050807.202009051031_all.deb
 2020/12/20 11:39:22 downloading: https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.8.7/amd64/linux-image-unsigned-5.8.7-050807-generic_5.8.7-050807.202009051031_amd64.deb
