@@ -78,6 +78,8 @@ func makeVersionID(version string) string {
 }
 
 func makeURLs(version string) []string {
+	// remove "v", e.g. v5.0.0 => 5.0.0
+	version = strings.TrimPrefix(version, "v")
 	baseVersionURL := baseURL + "v" + version
 	res, err := http.Get(baseVersionURL)
 	if err != nil {
